@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CyanBridge AI</string>
+    <string name="nav_control">Control</string>
+    <string name="nav_devices">Devices</string>
+    <string name="nav_chat">Chat</string>
+    <string name="nav_translate">Translate</string>
+    <string name="nav_settings">Settings</string>
+</resources>
