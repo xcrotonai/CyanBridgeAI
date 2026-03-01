@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/controlFragment"
+        android:icon="@android:drawable/ic_menu_camera"
+        android:title="Control" />
+    <item android:id="@+id/devicesFragment"
+        android:icon="@android:drawable/stat_sys_data_bluetooth"
+        android:title="Devices" />
+    <item android:id="@+id/chatFragment"
+        android:icon="@android:drawable/ic_menu_send"
+        android:title="Chat" />
+    <item android:id="@+id/translateFragment"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="Translate" />
+    <item android:id="@+id/settingsFragment"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="Settings" />
+</menu>

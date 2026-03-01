@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="16dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Live Translation" android:textSize="20sp" android:textStyle="bold"
+            android:textColor="@color/text_primary" android:layout_marginBottom="16dp" />
+
+        <!-- Language picker -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="TRANSLATE TO" android:textColor="@color/text_secondary"
+            android:textSize="11sp" android:letterSpacing="0.1" android:layout_marginBottom="6dp" />
+
+        <Spinner android:id="@+id/lang_spinner"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@color/card_background"
+            android:layout_marginBottom="16dp" android:padding="8dp" />
+
+        <!-- Text input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Type text to translate"
+            android:layout_marginBottom="8dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_text"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:minLines="3" android:gravity="top" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="16dp">
+            <Button android:id="@+id/btn_translate"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginEnd="8dp"
+                android:text="🌐 Translate Text"
+                android:backgroundTint="@color/cyan" android:textColor="@color/background" />
+            <Button android:id="@+id/btn_photo_translate"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📷 Photo → Text"
+                android:backgroundTint="@color/purple" />
+        </LinearLayout>
+
+        <!-- Result card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/result_card"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:visibility="gone" android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp" app:cardBackgroundColor="@color/card_background">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Translation" android:textStyle="bold"
+                    android:textColor="@color/text_secondary" android:layout_marginBottom="8dp" />
+                <TextView android:id="@+id/result_text"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="16sp" android:textColor="@color/text_primary" />
+                <Button android:id="@+id/btn_speak"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🔊 Speak" android:layout_marginTop="12dp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Auto-speak -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Auto-speak translations"
+                android:textColor="@color/text_primary" />
+            <androidx.appcompat.widget.SwitchCompat android:id="@+id/auto_speak_switch"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

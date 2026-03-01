@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <!-- Quick chips -->
+    <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:scrollbars="none" android:padding="8dp">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.chip.Chip android:id="@+id/chip_describe"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="👁 Describe view" android:layout_marginEnd="6dp" />
+
+            <com.google.android.material.chip.Chip android:id="@+id/chip_read_text"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="📖 Read text" android:layout_marginEnd="6dp" />
+
+            <com.google.android.material.chip.Chip android:id="@+id/chip_photo"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="📷 Take photo" android:layout_marginEnd="6dp" />
+
+            <com.google.android.material.chip.Chip android:id="@+id/chip_clear"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="🗑 Clear" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Chat messages -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chat_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:clipToPadding="false" />
+
+    <!-- Thinking indicator -->
+    <LinearLayout android:id="@+id/thinking_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+        <ProgressBar android:layout_width="24dp" android:layout_height="24dp"
+            android:layout_marginEnd="8dp" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="AI is thinking..." android:textColor="@color/text_secondary" />
+    </LinearLayout>
+
+    <!-- Input row -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:padding="8dp"
+        android:background="@color/card_background">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/chat_input"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Ask anything..."
+            android:imeOptions="actionSend"
+            android:inputType="textMultiLine"
+            android:maxLines="3"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary"
+            android:background="@color/card_background"
+            android:layout_marginEnd="8dp" />
+
+        <Button android:id="@+id/btn_send"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="➤"
+            android:backgroundTint="@color/cyan"
+            android:textColor="@color/background" />
+    </LinearLayout>
+
+</LinearLayout>
